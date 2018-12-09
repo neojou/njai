@@ -24,7 +24,13 @@ y_pred = classifier.predict(X_test)
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
-print(y_test)
-print(y_pred)
-print(cm)
+fig, ax = plt.subplots(figsize=(2.5, 2.5))
+ax.matshow(cm, cmap=plt.cm.Blues, alpha=0.3)
+for i in range (cm.shape[0]):
+    for j in range(cm.shape[1]):
+        ax.text(x=j, y=i, s=cm[i,j], va='center', ha='center')
+plt.xlabel('predicted label')
+plt.ylabel('true label')
+plt.show()
+
 
