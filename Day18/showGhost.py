@@ -141,7 +141,9 @@ def circle(pos, r, outlineColor, fillColor, endpoints=None, style='pieslice', wi
 		e = list(endpoints)
 	while e[0] > e[1]: e[1] = e[1] + 360
 
-	return _canvas.create_arc(x0, y0, x1, y1, outline=outlineColor, fill=fillColor, extent=e[1] - e[0], start=e[0], style=style, width=width)
+	return _canvas.create_arc(x0, y0, x1, y1, outline=outlineColor,
+			fill=fillColor, extent=e[1] - e[0], start=e[0],
+			style=style, width=width)
 
 def sleep(secs):
 	global _root_window
